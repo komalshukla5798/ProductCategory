@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes([
+  'register' => false, 
+  'reset' => false,
+  'verify' => false, 
+]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('/products', ProductController::class);
+
+Route::get('/seed', function() {
+  Artisan::call('db:seed');
+  return redirect('/login');
+})->name('seed');

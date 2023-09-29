@@ -7,6 +7,19 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Installation
+
+- Change database configurations inside the environment file.
+- Import product_category.sql into the MySQL database, which is given in the database folder. or you can perform database operations by running the below commands inside the powershell window of the root folder.
+- `php artisan migrate`
+- Now run `php artisan serve` and go to http://localhost:8000/.
+Click on the `Help?` button and click on `Seed Database`, or you can run the below command, `php artisan db:seed` in the PowerShell window.
+- Again, click on `Help?` and login with the given credentials.
+- Go to Products CRUD, and click on the Plus icon to create a new product.
+- You can also manage existing products with view, update, and delete functionality.
+- Status can be changed by using the switch function available inside the table.
+- Preview the image with Fancybox.
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
